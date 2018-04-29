@@ -1,0 +1,20 @@
+include apt 
+
+class {'apt':} 
+
+apt::ppa { 'ppa:openjdk-r/ppa':
+   notify => Exec['apt_update'], 
+} 
+
+
+class {'java':
+  distribution => 'jdk',
+  package => 'openjdk-8-jdk',
+}
+
+
+
+
+
+
+
